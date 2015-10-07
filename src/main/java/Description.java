@@ -1,3 +1,11 @@
 public class Description {
-  public Description(String description) {}
+  String mDescription;
+
+  public Description(String description) {
+    mDescription = description;
+  }
+
+  public String getDescription() {
+    return mDescription;
+  }
 }

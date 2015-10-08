@@ -20,6 +20,23 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
       goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("Descriptions");
+      assertThat(pageSource()).contains("Definitions");
+  }
+
+  @Test
+  public void definitionIsCreated() {
+      goTo("http://localhost:4567/");
+      fill("#definition").with("The color of bananas.");
+      submit(".btn");
+      assertThat(pageSource()).contains("The definition has been saved.");
+  }
+
+  @Test
+  public void definitionIsDisplayed() {
+    goTo("http://localhost:4567/");
+    fill("#definition").with("The color of strawberries.");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("The color of strawberries.");
   }
 }

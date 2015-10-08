@@ -39,4 +39,18 @@ public class AppTest extends FluentTest {
     click("a", withText("Go Back"));
     assertThat(pageSource()).contains("The color of strawberries.");
   }
+
+  @Test
+  public  void multipleDefinitionsAreDisplayed() {
+    goTo("http://localhost:4567/");
+    fill("#definition").with("Frozen water falling from the sky.");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    fill("#definition").with("A cold type of weather.");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("Frozen water falling from the sky.");
+    assertThat(pageSource()).contains("A cold type of weather.");
+
+  }
 }

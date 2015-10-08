@@ -1,7 +1,9 @@
 <h1>Definition List</h1>
-
-Current Definition:
-$definition.getDefinition()
+<ul>
+  #foreach ($definition in $definitions)
+  <li>$definition.getDefinition()</li>
+  #end
+</ul>
 <hr/>
 <p>Add a new Definition</p>
 

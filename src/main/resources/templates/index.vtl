@@ -1,15 +1,8 @@
-<h1>Definition List</h1>
-<ul>
-  #foreach ($definition in $definitions)
-  <li>$definition.getDefinition()</li>
-  #end
-</ul>
-<hr/>
-<p>Add a new Definition</p>
+<p>
+<h1>Make a dictionary</h1>
+</p>
 
-<form action="/definitions" method="post">
-  <label for="definition">Definitions</lable>
-  <input id="definition" name="definition" type="text">
-
-  <button type="submit" class="btn btn-default">Add Definition</button>
-</form>
+<p>
+<button type="button" class="btn btn-success"><a id="btn" href="/words/new">Add a new word</a></button>
+<button type="button" class="btn btn-info"><a id="btn" href="/words">View word list</a></button>
+</p>

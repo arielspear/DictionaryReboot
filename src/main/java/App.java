@@ -30,8 +30,8 @@ public class App {
 
   post("/words", (request, response) ->{
     HashMap<String, Object> model = new HashMap<String, Object>();
-    String inputtedWord = request.queryParams("inputtedWord");
-    Word newWord = new Word(inputtedWord);
+    String inputWord = request.queryParams("inputWord");
+    Word newWord = new Word(inputWord);
     model.put("word", newWord);
     model.put("words", Word.all());
     model.put("template", "templates/words.vtl");
@@ -69,8 +69,8 @@ public class App {
       request.session().attribute("definitions", definitions);
     }
 
-    String description = request.queryParams("description");
-    Definition newDefinition = new Definition(description);
+    String inputDefinition = request.queryParams("inputDefinition");
+    Definition newDefinition = new Definition(inputDefinition);
 
     definitions.add(newDefinition);
 

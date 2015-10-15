@@ -37,44 +37,44 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("dog");
   }
 
-  // @Test
-  // public void wordsAreDisplayedTest() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#inputWord").with("dog");
-  //   submit(".btn");
-  //   click("a", withText("Add new word"));
-  //   fill("#inputWord").with("cat");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("dog");
-  //   assertThat(pageSource()).contains("cat");
-  // }
+  @Test
+  public void wordsAreDisplayedTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#inputWord").with("dog");
+    submit(".btn");
+    click("a", withText("Add a new word"));
+    fill("#inputWord").with("cat");
+    submit(".btn");
+    assertThat(pageSource()).contains("dog");
+    assertThat(pageSource()).contains("cat");
+  }
 
-  // @Test
-  // public void wordDefinitionsIsDisplayed() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#inputWord").with("dog");
-  //   submit(".btn");
-  //   click("a", withText("dog"));
-  //   click("a", withText("Add a Definition"));
-  //   fill("#inputDefinition").with("Humanitie's friend");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("Humanitie's friend");
-  // }
+  @Test
+  public void wordDefinitionsIsDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#inputWord").with("dog");
+    submit(".btn");
+    click("a", withText("dog"));
+    click("a", withText("Add a definition"));
+    fill("#inputDefinition").with("Humanitie's friend");
+    submit(".btn");
+    assertThat(pageSource()).contains("Humanitie's friend");
+  }
 
-  // @Test
-  // public void definitionsAreAddedAndDisplayed() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#inputWord").with("apple");
-  //   submit(".btn");
-  //   click("a", withText("apple"));
-  //   click("a", withText("Add a Definition"));
-  //   fill("#inputDefinition").with("A fruit that grows on a tree.");
-  //   submit(".btn");
-  //   click("a", withText("Add a Definition"));
-  //   fill("#inputDefinition").with("My breakfast.");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("A fruit that grows on a tree.");
-  //   assertThat(pageSource()).contains("My breakfast.");
-  // }
+  @Test
+  public void definitionsAreAddedAndDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#inputWord").with("apple");
+    submit(".btn");
+    click("a", withText("apple"));
+    click("a", withText("Add a definition"));
+    fill("#inputDefinition").with("A fruit that grows on a tree.");
+    submit(".btn");
+    click("a", withText("Add a definition"));
+    fill("#inputDefinition").with("My breakfast.");
+    submit(".btn");
+    assertThat(pageSource()).contains("A fruit that grows on a tree.");
+    assertThat(pageSource()).contains("My breakfast.");
+  }
 
 }
